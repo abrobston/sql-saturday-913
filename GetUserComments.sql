@@ -1,0 +1,69 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE OR ALTER PROCEDURE #GetUserComments
+	@UserId INT
+AS
+SET NOCOUNT ON
+
+SELECT c.[Text], c.Score
+FROM   dbo.Comments c
+WHERE  c.UserId = @UserId
+GO
+
+EXEC #GetUserComments @UserId = 2515
+
+-- Others to try (sorry for duplicates):
+--3
+--380
+--242
+--4642
+--4642
+--2495
+--4642
+--2515
+--2515
+--199
+--658
+--292
+--4213
+--2353001
+--4064
+--4906
+--3394
+--4906
+--4213
+--1597
+--4213
+--91
+--2915
+--2658
+--1615
+--4035
+--4285
+--422
+--4761
+--1254
+--445087
+--4906
+--445087
+--445087
+--4798
+--797
+--445087
+--445087
+--4926
+--1573
+--209
+--2257
+--2260
+--4285
+--4285
+--4134
+--209
+--4833
+--3408
+--3408
+GO
